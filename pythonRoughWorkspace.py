@@ -9,6 +9,8 @@ print(x);print(y);print(z);
 fruits=["orange","Banana","Apple"]
 x,y,z=fruits
 print(x,end=' ');print(y,end=' ');print(z);
+x,*y=fruits
+print(x);print(y) #displayed remaining items as list
 
 x="Python"; y="is"; Z="awesome";
 print(x,y,z)
@@ -73,3 +75,47 @@ x=[1,2,3]
 y=[1,2,3]
 print(x == y) #checks if values of both vairable equal
 print(x is y) # checks if both variables point to same object in memory
+
+#List is a collection of different datatypes which is ordered and changeable. Allows duplicate members.
+thisList=["apple","banana","cherry"]
+thisList[1:3] = ["watermelon"]
+print(thisList) #apple,watermelon
+
+thisList=["apple","banana","cherry"]
+thisList.insert(2,"watermelon") #apple,banana,watermelon,cherry
+
+thisList.remove("watermelon")#removes only first occurence
+
+thisList.append("orange") #apple,banana,cherry,orange
+
+thisList=["apple","banana","cherry"]
+tropical=["mango","pineapple","papaya"]
+thisList.extend(tropical)
+print(thisList) # apple,banana,cherry,mango,pineapple,papaya
+
+thisList.pop(1) #Remove specified index item or last item if not provided index value.
+
+del thisList[0] #remove first item 
+del thisList # Delete the entire list
+#thisList.clear() #clears the list
+
+thisList=["apple","banana","cherry"]
+[print(x) for x in thisList] #loop using list comprehension
+
+thisList.sort(reverse=True) #sort list in reverse
+thisList.sort(key = str.lower) #case insensitive sort
+
+newList = thisList.copy()
+newList = list(thisList)
+newList = thisList[:] #above 3 way to copy list
+
+#Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+thisTuple=("apple","banana","cherry")
+thisTupel=("apple",) #one item tuple. must have comma.OW not a tuple.
+#As tuple is unchangeable (ie., immutable) any insert,append has to done by convering it to list and then back to tuple.
+
+del thisTuple #deltes the tuple entirely
+
+
+#Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+#Dictionary is a collection which is ordered** and changeable. No duplicate members.**As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
