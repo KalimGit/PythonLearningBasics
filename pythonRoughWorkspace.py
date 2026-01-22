@@ -117,5 +117,41 @@ thisTupel=("apple",) #one item tuple. must have comma.OW not a tuple.
 del thisTuple #deltes the tuple entirely
 
 
-#Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+#Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.*But can add and remove item.
+thisSet={"apple","banana","cherry"}
+print(thisSet)
+
+thisSet.add("Orange")
+tropical={"pineapple","mango"}
+thisSet.update(tropical) # values in both sets are appended
+
+thisSet.remove("banana") #If item not present, then throws error. To avoid this, use discard()
+thisSet.discard("jj")
+thisSet.clear()
+del thisSet #If printing after del will raise error as not defined.same behavior for List too.
+#common operations in Set
+#set1.union(set2); set1.union(set2,set3) - Used to combine two sets
+#set1 | set2 | set3 - Used to combine set with set or set with list and so on.
+#set3 = set1.intersection(set2) - find common item between sets and return
+#set1.intersection_update(set2) - find common and update the existin set1. Do not return new set.
+#set3 = set1.difference(set2) - find items present in set1 and not in set2
+#set1.difference_update(set2)
+#set1.symmetric_difference(set2) - find items not present in both sets. Use also like set1 ^ set2.
+
+set1 = frozenset({"apple","banana","orange"}) #like immutable set.
+
+
 #Dictionary is a collection which is ordered** and changeable. No duplicate members.**As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
+thisDict={"brand":"Ford","model":"Mustang","Year":1975,"Year":2000}
+thisDict["model"]  
+thisDict.get("model")
+thisDict.keys() #dict_keys(['brand', 'model', 'year'])
+thisDict.values() #dict_values(['Ford', 'Mustang', 1964])
+
+if(5>2): pass
+
+for x in range(6):
+    print(x)
+else:
+    print("Finally Finished!") #else won't execute if break is used to stop the loop
+    
