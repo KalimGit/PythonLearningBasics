@@ -202,3 +202,39 @@ print(y.strftime("%A"))
 print(y.strftime("%a"))
 print(y.strftime("%B"))
 print(y.strftime("%b"))
+
+import json
+jsonInput = '{"name":"Kaleem","gender":"male"}'
+parsedJson = json.loads(jsonInput) #to convert json to python object (ie., dictonary)
+print(parsedJson)
+jsonOutput = json.dumps(parsedJson) #to convert python dict to json
+print(jsonOutput)
+
+print(json.dumps({"name": "John", "age": 30}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+
+# sort the result alphabetically by keys:
+print(json.dumps(parsedJson, indent=4, sort_keys=True))
+
+import re #for regex. refer more examples
+#   pip install <packageName>
+try:
+  print("Hello")
+  raise TypeError("Only Integers are allowed")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong")
+finally:
+  print("finally block")
+
+#String formatting using f-string
+txt = f'This is {52:.2f} inches'
+print(txt)
