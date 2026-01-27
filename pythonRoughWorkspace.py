@@ -154,4 +154,51 @@ for x in range(6):
     print(x)
 else:
     print("Finally Finished!") #else won't execute if break is used to stop the loop
-    
+
+#Function Decorator
+def changecase(func):
+  def myinner(x):
+    return func(x).upper()
+  return myinner
+
+@changecase
+#@addgreeting  #the decoarator are called in reverse order starting from the one close to function
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))    
+
+#functools.wraps - to preserve original function name and doc
+import functools
+def changecas(func):
+    @functools.wraps(func)
+    def myinner():
+        return func().upper()
+    return myinner
+@changecas
+def myfunction():
+    print("Hello,Kaleem")
+
+#Python Lambda
+#can have any number of arguments but only one expression
+x = lambda a,b,c:a+b+c
+print(x(5,2,2)) #9
+#Lambda with map, filter and sorted
+numbers=[1,2,3,4,5]
+doubled=list(map(lambda x: x*2,numbers)) #
+print(doubled) #[2,4,6,8,10]
+oddnumbers=list(filter(lambda x:x%2!=0, numbers))
+print(oddnumbers) #[1,3,5]
+items=("ape","scooter","Jeep")
+sorteditems=sorted(items,key=lambda x:len(x)) # sort by length
+print(sorteditems)
+
+import datetime
+x = datetime.datetime.now()
+print(x)
+y = datetime.datetime(2025,8,26)
+print(y.year)
+print(y.strftime("%A"))
+print(y.strftime("%a"))
+print(y.strftime("%B"))
+print(y.strftime("%b"))
