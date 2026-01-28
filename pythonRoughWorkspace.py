@@ -238,3 +238,14 @@ finally:
 #String formatting using f-string
 txt = f'This is {52:.2f} inches'
 print(txt)
+
+#OOPS
+class Vehicle:
+  t="Vehicle"
+  def __init__(self,name,model):
+    self.name = name
+    self.__model = model #Private instance property
+  def printCarDetail(self):
+    print(f'The {self.t} name is {self.name}.Model - {self.__model}')
+c = Vehicle("Corolla","1995")
+c.printCarDetail()
