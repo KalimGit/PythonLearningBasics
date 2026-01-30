@@ -249,3 +249,4 @@ class Vehicle:
     print(f'The {self.t} name is {self.name}.Model - {self.__model}')
 c = Vehicle("Corolla","1995")
 c.printCarDetail()
+
